@@ -1,0 +1,31 @@
+package com.mystartup.food.Model;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
+public class Food {
+    private String name;
+    private Double price;
+
+
+    public Food(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+}

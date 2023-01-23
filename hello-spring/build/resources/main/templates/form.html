@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action = 'hello' method = 'post'>
+        <input type = 'text' name = 'name'>
+        <input type = 'submit' value = 'Greet me'>
+    </form>
+    <p th:text="${addition}">override ediyor bu yazıyı</p>
+</body>
+</html>
