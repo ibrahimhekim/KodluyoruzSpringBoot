@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<header th:replace="fragments :: header">Cr</header>
+
+<!--<p th:text = "${errorMsg}" style="color:red;"></p>-->
+<!--her bir error mesajini field larin altina yazdik-->
+
+<form method="post">
+
+    <div class="from-group">
+    <label>Name                                                                 <!--eventName-->
+        <input th:field="${event.name}" class="form-control">    <!--type="text" name="name"-->
+    </label>
+        <p class="error" th:errors="${event.name}"></p>
+    </div>
+
+    <div class="from-group">
+    <label>Description     <!--eventDescription-->
+        <input th:field="${event.description}" class="form-control">   <!--type="text" name="description"-->
+    </label>
+        <p class="error" th:errors="${event.description}"></p>
+    </div>
+
+    <div class="from-group">
+    <label>Contact Email
+        <input th:field="${event.contactEmail}" class="form-control">    <!--type="text" name="contactEmail"-->
+    </label>
+        <p class="error" th:errors="${event.contactEmail}"></p>
+    </div>
+
+    <div class="form-group">
+        <label>Type
+            <select th:field="${event.eventType}">
+                <option th:each="eventType : ${types}"
+                        th:value="${eventType}"
+                        th:text="${eventType.displayName}">
+                </option>
+
+            </select>
+        </label>
+
+    </div>
+
+    <div class="from-group">
+    <input type="submit" value="Create" class="btn btn-success">
+    </div>
+
+</form>
+</body>
+</html>
